@@ -1,0 +1,40 @@
+#include<stdio.h>
+int maxsubarray(int a[],int n);
+int main()
+{
+int a[]={-2,-3,4,-1,-2,1,5,-3};
+int n=sizeof(a)/sizeof(a[0]);
+int max=maxsubarray(a,n);
+return 0;
+}
+int maxsubarray(int a[],int n)
+{
+int min=a[0],i;
+for(i=0;i<n;i++)
+{
+if(a[i]<=min)
+min=a[i];
+}
+int msf=min,meh=0;
+int start=0,end=0,s=0;
+for(int i=0;i<n;i++)
+{
+meh+=a[i];
+if(msf<meh)
+{
+msf=meh;
+start=s;
+end=i;
+}
+if(meh<0)
+{
+meh=i+1;
+s=i+1;
+}
+}
+printf("\n sum is %d:",msf);
+printf("[");
+for(i=start;i<=end;i++)
+printf("%d ",a[i]);
+printf("]");
+}

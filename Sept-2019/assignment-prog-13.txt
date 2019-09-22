@@ -1,0 +1,52 @@
+//first repetive positive integer
+#include<stdio.h>
+
+void main()
+
+{
+
+    int n,i,A;
+
+    printf("\n enter number of elements:");
+
+    scanf("%d",&n);
+
+    int a[n];
+
+    printf("\n enter elements into the array:");
+
+    for(i=0;i<n;i++)
+
+    scanf("%d",&a[i]);
+
+    for(i=0;i<n;i++)
+
+    {
+
+        if(a[i]<0)
+
+        continue;
+
+    if(a[a[i]%n]>n)
+
+    {
+
+        A=a[i]%n;
+
+        break;
+
+    }
+
+    else
+
+    {
+
+        a[a[i]]+=n;
+
+    }
+
+    }
+
+    printf("\n first repeating element is:%d",A);
+
+}

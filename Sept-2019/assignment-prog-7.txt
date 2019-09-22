@@ -1,0 +1,19 @@
+//recursive approach for pow(x,n)%M
+#include<stdio.h>
+int powe(int b,int p);
+void main()
+{
+    int x,n,res=1,M;
+    printf("enter [pow(x,n) MOD M] x and n values: ");
+    scanf("%d%d%d",&x,&n,&M);
+    res=powe(x,n);
+    res=res%M;
+    printf("%d",res);
+}
+int powe(int b,int p)
+{
+    if(p==0)
+    return 1;
+    else
+    return(b*powe(b,p-1));
+}

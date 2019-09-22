@@ -1,0 +1,18 @@
+//recursive approach for pow(x,n)
+#include<stdio.h>
+int powe(int b,int p);
+void main()
+{
+    int x,n,res=1;
+    printf("enter pow(x,n) x and n values: ");
+    scanf("%d%d",&x,&n);
+    res=powe(x,n);
+    printf("%d",res);
+}
+int powe(int b,int p)
+{
+    if(p==0)
+    return 1;
+    else
+    return(b*powe(b,p-1));
+}

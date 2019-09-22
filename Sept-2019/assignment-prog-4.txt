@@ -1,0 +1,11 @@
+//iterative approach for pow(x,n)
+#include<stdio.h>
+void main()
+{
+    int x,n,res=1;
+    printf("enter pow(x,n) x and n values: ");
+    scanf("%d%d",&x,&n);
+    for(int i=0;i<n;i++)
+    res*=x;
+    printf("%d",res);
+}
